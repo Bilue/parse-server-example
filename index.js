@@ -11,6 +11,8 @@ if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
 }
 
+// for some reason, the PARSE_SERVER_FILES_ADAPTER setting isn't being
+// honoured. so, we just hard code the S3Adapter in here
 var S3Adapter = require('parse-server').S3Adapter;
 
 var api = new ParseServer({
